@@ -1,0 +1,123 @@
+
+R version 4.5.2 (2025-10-31) -- "[Not] Part in a Rumble"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.82 (8556) aarch64-apple-darwin20]
+
+[History restored from /Users/miraajchaudhry/.Rapp.history]
+
+> data<-read.csv(“BKB_WaterQualityData_2020084.csv”, header=True)
+Error: unexpected input in "data<-read.csv(“"
+> summary(data)
+Error in object[[i]] : object of type 'closure' is not subsettable
+> DO<-data$Dissolved.Oxygen..mg.L.
+Error in data$Dissolved.Oxygen..mg.L. : 
+  object of type 'closure' is not subsettable
+> pH<-data$pH..standard.units.
+Error in data$pH..standard.units. : 
+  object of type 'closure' is not subsettable
+> model1<-lm(DO ~ pH)
+Error in eval(predvars, data, env) : object 'DO' not found
+> summary(model1)
+Error: object 'model1' not found
+> plot(pH, DO); abline(model1, col=2)
+Error: object 'pH' not found
+> plot(fitted(model1),residuals(model1)); abline(h=0, lty=2)
+Error: object 'model1' not found
+> qqnorm(residuals(model1)); qqline(residuals(model1))
+Error: object 'model1' not found
+> model2 <- lm(log(DO) ~ pH)
+Error in eval(predvars, data, env) : object 'DO' not found
+> qqnorm(residuals(model2)); qqline(residuals(model2))
+Error: object 'model2' not found
+> model3 <- lm(sqrt(DO) ~ pH)
+Error in eval(predvars, data, env) : object 'DO' not found
+> qqnorm(residuals(model3)); qqline(residuals(model3))
+Error: object 'model3' not found
+> 
+> data<-read.csv(“BKB_WaterQualityData_2020084.csv”, header=True)
+Error: unexpected input in "data<-read.csv(“"
+> 
+> data<-read.csv(“BKB_WaterQualityData_2020084.csv”, header=True)
+Error: unexpected input in "data<-read.csv(“"
+> data<-read.csv("BKB_WaterQualityData_2020084.csv", header=TRUE)
+> summary(data)
+   Site_Id            Unit_Id           Read_Date         Salinity..ppt.   Dissolved.Oxygen..mg.L.
+ Length:2371        Length:2371        Length:2371        Min.   :0.0000   Min.   : 0.000         
+ Class :character   Class :character   Class :character   1st Qu.:0.0000   1st Qu.: 4.800         
+ Mode  :character   Mode  :character   Mode  :character   Median :0.0000   Median : 6.500         
+                                                          Mean   :0.7171   Mean   : 6.646         
+                                                          3rd Qu.:1.0000   3rd Qu.: 8.500         
+                                                          Max.   :9.0000   Max.   :15.100         
+                                                          NA's   :130      NA's   :851            
+ pH..standard.units. Secchi.Depth..m. Water.Depth..m.   Water.Temp...C. Air.Temp.Celsius Air.Temp...F.  
+ Min.   :0.300       Min.   :0.0000   Min.   : 0.0100   Min.   : 0.00   Min.   : 0.00    Min.   :10.50  
+ 1st Qu.:6.500       1st Qu.:0.3000   1st Qu.: 0.4000   1st Qu.:11.00   1st Qu.: 9.00    1st Qu.:49.00  
+ Median :7.000       Median :0.4000   Median : 0.6500   Median :19.00   Median :15.00    Median :63.00  
+ Mean   :7.168       Mean   :0.5249   Mean   : 0.7626   Mean   :18.06   Mean   :16.44    Mean   :62.05  
+ 3rd Qu.:7.500       3rd Qu.:0.6500   3rd Qu.: 0.9500   3rd Qu.:25.00   3rd Qu.:21.70    3rd Qu.:75.00  
+ Max.   :9.900       Max.   :9.0000   Max.   :12.0000   Max.   :74.00   Max.   :74.00    Max.   :92.30  
+ NA's   :95          NA's   :73       NA's   :71        NA's   :121     NA's   :2286     NA's   :71     
+ Time..24.00.        Field_Tech        DateVerified       WhoVerified         AirTemp..C.           Year     
+ Length:2371        Length:2371        Length:2371        Length:2371        Min.   :-17.778   Min.   :1899  
+ Class :character   Class :character   Class :character   Class :character   1st Qu.:  8.889   1st Qu.:2001  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character   Median : 16.667   Median :2007  
+                                                                             Mean   : 15.663   Mean   :2006  
+                                                                             3rd Qu.: 23.889   3rd Qu.:2012  
+                                                                             Max.   : 33.500   Max.   :2019  
+                                                                                                             
+> DO<-data$Dissolved.Oxygen..mg.L.
+> pH<-data$pH..standard.units.
+> model1<-lm(DO ~ pH)
+> sumamry(model1)
+Error in sumamry(model1) : could not find function "sumamry"
+> summary(model1)
+
+Call:
+lm(formula = DO ~ pH)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-6.8070 -1.9114 -0.0462  1.7844  8.2930 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  5.41518    0.59048   9.171   <2e-16 ***
+pH           0.17398    0.08123   2.142   0.0324 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.508 on 1463 degrees of freedom
+  (906 observations deleted due to missingness)
+Multiple R-squared:  0.003126,	Adjusted R-squared:  0.002444 
+F-statistic: 4.587 on 1 and 1463 DF,  p-value: 0.03237
+
+> plot(pH, DO); abline(model1, col=2)
+> plot(fitted(model1), residuals(model1)); abline(h=0, lty=2)
+> qqnorm(residuals(model1)); qqline(residuals(model1))
+> model2<-lm(log(DO) ~ pH)
+Error in lm.fit(x, y, offset = offset, singular.ok = singular.ok, ...) : 
+  NA/NaN/Inf in 'y'
+> model2<-lm(log(DO) + 1 ~ pH)
+Error in lm.fit(x, y, offset = offset, singular.ok = singular.ok, ...) : 
+  NA/NaN/Inf in 'y'
+> model2<-lm(log(DO + 1) ~ pH)
+> qqnorm(residuals(model2)); qqline(residuals(model2))
+> model3<-lm(sqrt(DO) ~ pH)
+> qqnorm(residuals(model3)); qqline(residuals(model3))
+> 
